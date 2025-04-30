@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basher Progress by Anitus A</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Animations */
+    .fade-in-scale {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      animation: fadeInScale 0.8s ease-out forwards;
+    }
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .slide-in-left {
+      opacity: 1;
+      transform: translateX(0);
+      animation: slideInLeft 0.6s ease-out forwards;
+      animation-delay: calc(var(--i) * 0.2s);
+    }
+    @keyframes slideInLeft {
+      0% { opacity: 0; transform: translateX(-20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .section-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .section-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .image-intro {
+      opacity: 1;
+      transform: rotate(0) scale(1);
+      animation: imageIntro 1s ease-out forwards;
+    }
+    @keyframes imageIntro {
+      0% { opacity: 0; transform: rotate(10deg) scale(0.8); }
+      100% { opacity: 1; transform: rotate(0) scale(1); }
+    }
+    .image-scroll {
+      opacity: 0;
+      transform: translateX(50px) scale(0.8);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .image-scroll.visible {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 2s steps(40, end) forwards;
+    }
+    @keyframes typing {
+      to { width: 100%; }
+    }
+    /* Section Hover Glow */
+    .section-glow:hover .glass {
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.8), 0 0 50px rgba(147, 51, 234, 0.5);
+      transition: box-shadow 0.3s ease;
+    }
+    .section-glow:hover .side-image {
+      filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
+      transition: filter 0.3s ease;
+    }
+    /* Glassmorphism */
+    .glass {
+      background: rgba(31, 41, 55, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* Header Background */
+    .header-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516321310764-8d9c63431f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+    /* Scroll-to-top button */
+    #scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    #scrollToTop.visible {
+      opacity: 1;
+      animation: bounceSpin 0.5s ease-out;
+    }
+    @keyframes bounceSpin {
+      0% { transform: scale(0) rotate(0deg); opacity: 0; }
+      50% { transform: scale(1.2) rotate(180deg); }
+      100% { transform: scale(1) rotate(360deg); opacity: 1; }
+    }
+    /* Side Images */
+    .side-image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      .side-image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+      }
+      .flex-col > .glass {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
+  <!-- Header -->
+  <header class="header-bg py-8 sticky top-0 z-10 shadow-lg">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-indigo-300 typewriter inline-block">Rookie's Progress by Anitus </h1>
+      <p class="mt-2 text-lg text-indigo-200 fade-in-scale" style="animation-delay: 2.2s;">A Journey Through Tech Community👊</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12 space-y-12">
+    <!-- Things I Learned -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/learning.png" alt="Learning Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Things I Learned</h2>
+        </div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li class="slide-in-left" style="--i: 1;">Program flow</li>
+          <li class="slide-in-left" style="--i: 2;">Data base keys</li>
+          <li class="slide-in-left" style="--i: 3;">Vs code setup</li>
+          <li class="slide-in-left" style="--i: 4;">Git stuffs</li>
+          <li class="slide-in-left" style="--i: 5;">Github push</li>
+          <li class="slide-in-left" style="--i: 6;">Python time based modules, pip module</li>
+          <li class="slide-in-left" style="--i: 7;">uses of github student pack</li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/learning.png" alt="Learning" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Stuffs I Learned -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/code.png" alt="Tech Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Stuffs I Learned</h2>
+        </div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li class="slide-in-left" style="--i: 1;">React .js</li>
+          <li class="slide-in-left" style="--i: 2;">Node.js</li>
+          <li class="slide-in-left" style="--i: 3;">My sql / mongo db</li>
+          <li class="slide-in-left" style="--i: 4;">Notion</li>
+          <li class="slide-in-left" style="--i: 5;">Figma</li>
+        </ul>
+        <h3 class="text-xl font-medium text-indigo-300 mt-6 bg-gradient-to-r from-indigo-500 to-purple-600 inline-block px-2 py-1 rounded">Shortcuts for Frontend <span class="text-gray-400">👇 { CB ashif }</span></h3>
+        <ul class="list-disc pl-6 space-y-2 mt-2">
+          <li class="slide-in-left" style="--i: 1;"><a href="https://icon8.com" class="text-indigo-400 hover:underline">Icons: icon8.com</a></li>
+          <li class="slide-in-left" style="--i: 2;"><a href="https://blush.design" class="text-indigo-400 hover:underline">Illustration: blush illustration</a></li>
+          <li class="slide-in-left" style="--i: 3;"><a href="https://coolors.co" class="text-indigo-400 hover:underline">Colours: coolor</a>, <a href="https://color.adobe.com" class="text-indigo-400 hover:underline">adobe colour</a></li>
+          <li class="slide-in-left" style="--i: 4;"><a href="https://css-animations.io" class="text-indigo-400 hover:underline">Animation: css animation io</a></li>
+          <li class="slide-in-left" style="--i: 5;"><a href="https://fonts.google.com" class="text-indigo-400 hover:underline">Font: google fonts</a></li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/code.png" alt="Code" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Experience I Got -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/github.png" alt="GitHub Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Experience I Got</h2>
+        </div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li class="slide-in-left" style="--i: 1;">Troubleshooting errors using console</li>
+          <li class="slide-in-left" style="--i: 2;">Creating frontend and backend stuffs</li>
+          <li class="slide-in-left" style="--i: 3;">How to create a portfolio</li>
+          <li class="slide-in-left" style="--i: 4;">How github pages works</li>
+          <li class="slide-in-left" style="--i: 5;">Why requirements need before process start</li>
+          <li class="slide-in-left" style="--i: 6;">How to included circular marks in my portfolio</li>
+          <li class="slide-in-left" style="--i: 7;">Programming language / markup / mark down language stuffs</li>
+          <li class="slide-in-left" style="--i: 8;">How to run frontend, backend</li>
+          <li class="slide-in-left" style="--i: 9;">Make a killer Profile for GitHub</li>
+          <li class="slide-in-left" style="--i: 10;">Why Version control takes a big role</li>
+          <li class="slide-in-left" style="--i: 11;">How html hyper link acts</li>
+          <li class="slide-in-left" style="--i: 12;">How github give sub-domain to show case our project</li>
+          <li class="slide-in-left" style="--i: 13;">What is local host</li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/github.png" alt="GitHub" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- My Contributions -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/collaboration.png" alt="Collaboration Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">My Contributions</h2>
+        </div>
+        <p class="slide-in-left" style="--i: 1;">I co-operate for all the bashers, try to attend all the clan gathering meeting, all weekly bash and also our intra clan’s hackathon.</p>
+      </div>
+      <img src="https://img.icons8.com/color/100/collaboration.png" alt="Collaboration" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Inspiration -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/idea-window.png" alt="idea-window"/>
+          <h2 class="text-2xl font-semibold text-indigo-400">Inspiration</h2>
+        </div>
+        <div class="border-l-4 border-indigo-500 pl-4 italic slide-in-left" style="--i: 1;">
+          <p>My inspiration is the one who is always in technical mindset 😁 [ his collection ].</p>
+        </div>
+      </div>
+      <img width="100" height="100" src="https://img.icons8.com/clouds/100/innovation.png" alt="innovation"/>
+    </section>
+
+    <!-- Clan Initiative -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/rocket.png" alt="Initiative Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Clan Initiative</h2>
+        </div>
+        <p class="mb-4 slide-in-left" style="--i: 1;">I think we are the technical hub of our community 😉 since we're the only clan with "technology" in our name.</p>
+        <p class="mb-4 slide-in-left" style="--i: 2;">Our IT organizer conducted an intra-clan hackathon where we gained valuable knowledge about:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li class="slide-in-left" style="--i: 3;">Why idea 💡 sharing is the first step</li>
+          <li class="slide-in-left" style="--i: 4;">How to create app flow</li>
+          <li class="slide-in-left" style="--i: 5;">Why React.js is better than Angular</li>
+          <li class="slide-in-left" style="--i: 6;">How to make page flow</li>
+          <li class="slide-in-left" style="--i: 7;">How to plan the number of pages needed for an application</li>
+          <li class="slide-in-left" style="--i: 8;">How to connect a login page with a database</li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/rocket.png" alt="Initiative" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Tasks I Completed -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/python.png" alt="Python Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Tasks I Completed</h2>
+        </div>
+        <ul class="list-disc pl-6 space-y-2">
+          <li class="slide-in-left" style="--i: 1;">I created an app flow in Python language for a learning scheduler. { CB Shaniya }</li>
+          <li class="slide-in-left" style="--i: 2;">I created a portfolio for myself using HTML, CSS. { CB Ashif}</li>
+          <li class="slide-in-left" style="--i: 3;">I created a profile for my GitHub account using markdown language. { ITO Bennyhinn Sam }</li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/python.png" alt="Python" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Challenges I Faced -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/error.png" alt="Challenge Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Challenges I Faced</h2>
+        </div>
+        <ol class="list-decimal pl-6 space-y-4">
+          <li class="slide-in-left">In github push for my learning scheduler code. I don't know if I create a folder after that I create a new files and github will capture as folder not as file</li>
+          <li class="slide-in-left">In building learning scheduler code, as our organiser want to save all details to a local storage and also he gave a hint 💡 as using json that json concept is new for me in that time.</li>
+          <li class="slide-in-left">After I created my portfolio, i casually push it into github, and I also enger to host it, at one time our clan’s basher lethin said GitHub will help everyone to host our portfolio then I search about how to host a portfolio through github, it gives a simple answer - use GitHub pages after that oru IT Organiser will say “learn about how github pages works “ after that I found, GitHub pages stores oru code and run it in their domain and also gives a sub-domain.</li>
+          <li class="slide-in-left">Also while i run my portfolio through github pages 📃 my image will not found in it ( It looks likes an error ) after that I want a help form a legend, he will give me a hint like run a code in browser “you can see console to find error in it “ after that I found that error as not include my img src in github folder.</li>
+        </ol>
+        <p class="text-gray-400 mt-4 text-sm slide-in-left" style="--i: 1;">The above details were gathered through daily meetings in Aura-7F clan</p>
+      </div>
+      <img src="https://img.icons8.com/color/100/error.png" alt="Error" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Experience by Weekly Bash -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/calendar.png" alt="Event Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Experience by Weekly Bash</h2>
+        </div>
+        <ul class="space-y-4">
+          <li class="slide-in-left">At first, I attended a weekly bash conducted by <strong>Shadastria Adepti</strong>. The first session was taken by Roshan Lal, who said, "AI will not take our jobs, but if you don't know how to use AI, you may definitely lose your jobs." He also discussed the differences between apps and web pages using PWA and explained PWA concepts. After the morning session and lunch, Basher Salamon conducted a fun quiz session.</li>
+          <li class="slide-in-left">At my second weekly bash (actually, it was the first weekly bash for rookies), I joined the Aura-7F clan. That morning was dedicated to clan selection for rookies. Afterward, we had a task session where we used AI to create two videos in 30 minutes and presented them to our community members.</li>
+          <li class="slide-in-left">At my third weekly bash, Basher Haleel led the morning session about hardware topics. Then, Basher Nithish ran a session about Git and GitHub. After lunch, we had fun game sessions.</li>
+          <li class="slide-in-left">At my 4th weekly bash, Basher Falin taught basic Adobe Photoshop skills, followed by fun gaming sessions for the rest of the day.</li>
+        </ul>
+      </div>
+      <img src="https://img.icons8.com/color/100/calendar.png" alt="Calendar" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Projects -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/project.png" alt="Project Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Projects</h2>
+        </div>
+        <p class="mb-4 slide-in-left" style="--i: 1;">Explore some of the projects I've worked on:</p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <a href="ajr.html" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 2;">Project 1: Identation for an app </a>
+          <a href="https://anitusa.github.io/AnitusA-portfolio/" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 3;">Project 2: Personal Portfolio </a>
+        </div>
+      </div>
+      <img src="https://img.icons8.com/color/100/project.png" alt="Project" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- Suggestion for Our Community -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/idea.png" alt="Idea Icon" class="w-10 h-10 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">Suggestion for Our Community</h2>
+        </div>
+        <p class="slide-in-left" style="--i: 1;">As the technical community on our campus, we share knowledge through weekly bash sessions. However, these sessions only provide a basic overview without hands-on practical or theoretical learning. Therefore, I suggested hosting a competition every 3 months where bash clan build something new. This would help everyone understand how different domains work together in product development. I believe this would inspire all bashers in our community !!!</p>
+      </div>
+      <img src="https://img.icons8.com/color/100/idea.png" alt="Idea" class="side-image image-scroll image-intro">
+    </section>
+
+    <!-- My Gratefulness -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+            <img width="40" height="40" src="https://img.icons8.com/glyph-neue/64/7950F2/heart-with-arrow--v1.png" alt="heart-with-arrow--v1"/>
+          <h2 class="text-2xl font-semibold text-indigo-400">My Gratefulness</h2>
+        </div>
+        <p class="slide-in-left" style="--i: 1;">I want to thank all the rookies, bashers, organizers, and moderators who encouraged me and helped me enter the community as a rookie. I'm grateful to be part of BYTE-BASH-BLITZ 👊. The bashers, captain bashers, and organizers have been incredibly helpful during task completion.</p>
+      </div>
+      <img width="100" height="100" src="https://img.icons8.com/external-sbts2018-flat-sbts2018/58/external-thank-you-basic-ui-elements-2.3-sbts2018-flat-sbts2018.png" alt="external-thank-you-basic-ui-elements-2.3-sbts2018-flat-sbts2018"/>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-900 py-6 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">© 2025 Basher Progress by Anitus A | Part of BYTE-BASH-BLITZ</p>
+      <p class="mt-2">
+        <a href="mailto:anitus2006ajr@gmail.com?subject=Contact%20from%20Basher%20Progress" class="text-indigo-400 hover:underline hover-lift inline-block pulse">Contact Me</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollToTop" class="bg-indigo-600 text-white p-3 rounded-full hover:bg-indigo-700 transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Scroll-to-Top Button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      scrollToTopBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Scroll-Triggered Animations for Sections and Images
+    const animateOnScroll = () => {
+      const sections = document.querySelectorAll('.section-animate');
+      const images = document.querySelectorAll('.image-scroll');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              entry.target.classList.toggle('visible', entry.isIntersecting);
+            });
+          },
+          { threshold: 0.2 }
+        );
+        sections.forEach((el) => observer.observe(el));
+        images.forEach((el) => observer.observe(el));
+      } else {
+        // Fallback: Show all content if IntersectionObserver is unsupported
+        sections.forEach((el) => el.classList.add('visible'));
+        images.forEach((el) => el.classList.add('visible'));
+      }
+    };
+
+    // Initialize
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>

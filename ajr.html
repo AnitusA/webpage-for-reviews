@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basher Recognition System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+    }
+    .animate-slide-in {
+      animation: slideIn 0.5s ease-out forwards;
+    }
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in forwards;
+    }
+    .topic-section {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .topic-section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+      background-color: #2d2d2d;
+    }
+    .topic-section:hover .content-bounce {
+      animation: bounce 0.4s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-gray-900 py-6 shadow-lg">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-center animate-fade-in">Basher Recognition System</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-12 flex-grow">
+    <!-- Section: Basher Recognition system - Ideation -->
+    <section id="ideation" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">Basher Recognition system - Ideation</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <h2><pre class="text-lg content-bounce">Workin on it - currently !!</pre></h2>
+      </div>
+    </section>
+
+    <!-- Section: The Idea -->
+    <section id="idea" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">The Idea</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <pre class="text-lg content-bounce">
+
+
+ Login (separate features for bashers and organizers)
+ Previous month top 10 members only selected for nomination system (for best basher)
+ for best leader, every clan members where nominate two members from their clan and also five points from the whole clan about why they were nominated for best leaders
+ for best clan, vote the best clan except choosing their own clan and for every clan they provide their detailed description about their progress  , conducted events etc…
+ for best profile, everyone able to vote anyone based on popularity , …..
+        </pre>
+      </div>
+    </section>
+
+    <!-- Section: App flow -->
+    <section id="app-flow" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">App flow</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <pre class="text-lg content-bounce">
+
+ Flow for Bashers
+   1. View the list to vote
+    2. able to vote
+        1. for best basher-choose one to vote and one who vote doesn’t able to vote for themselves
+        2. for best leader - choose one other than their clan
+        3. for best clan - vote for one clan except their clan
+        4. for best profile - vote anyone randomly according to their fame
+
+ Nomination Flow
+    1. For best basher - Based on last month points highest point bashers (10 bashers) 
+    2. For best leader - nominate two leaders from their respective clan with description (max 5  description points) by captain bashers.
+    3. For best clan - nominate your clan with description (max 5 points) by captain bashers.
+ Flow for Organizers
+    1. Edit the list to vote
+    2. Able to edit 
+        1.  for best bashers - able to show top 10 members based on their past month bash points , provide the top 10 members to vote
+        2.  for best leader - able to edit description and verify the best leaders nominated by the bash clans and push that into vote 
+        3. for best clan - able to edit and verify description of  the bash clans and push that into vote 
+        </pre>
+      </div>
+    </section>
+
+    <!-- Section: Pages -->
+    <section id="pages" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">Pages</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <pre class="text-lg content-bounce">
+
+ Login page
+    1. Username + password
+ Administration Page (only for organizers)
+    1. For best bashers - Selecting , default top 10 members to push to vote
+    2. List last month bash points for all bashers
+    3.  For best leader - able to edit description , edit members and able to verify and approve
+    4. For best bash clan - able to edit clans and description and verify then upload it into voting page
+    5. Show voting page results to admin 
+    6. To modify result winners show edit option
+ Nomination Page (Access only for captain bash and organizers)
+    1. Best leader - select two bashers from their clan with valid description (max 5 points)Voting page 
+    2. Bash clans - provide valid description about your clan activities such as important events , progress, projects, achievements on last month etc..(max 5 points) 
+ Voting page
+    1. Best bashers list to vote , give feature as to not vote for themselves 
+    2. Best leader list  to vote with the description nominated by clans and verified by admins , and give feature as to not vote for their clan members
+    3. Bash clans list to vote with description, and give the feature to not vote for their  own clan
+    4. Best profile - show all the members list to vote 
+ Hall of Fame
+    1. Show the winners ( best bashers ,best clan ,best profile, best leader ) after voting time 
+        </pre>
+      </div>
+    </section>
+
+    <!-- Section: Data -->
+    <section id="data" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">Data</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <pre class="text-lg content-bounce">
+
+1. Username or Email and password
+2. Role based Data
+3. All bashers data
+4. Bash Points and Basher ID 
+5. Best leader from clans + description
+6. Clan Details (members)
+7. Voting Points with username
+8. Descriptions (clan , leader)
+9. Winners 
+        </pre>
+      </div>
+    </section>
+
+    <!-- Section: tables & relations -->
+    <section id="tables-relations" class="mb-16 animate-slide-in">
+      <h2 class="text-3xl font-semibold mb-6">Tables & Relations</h2>
+      <div class="bg-gray-800 p-8 rounded-lg topic-section max-w-4xl mx-auto">
+        <pre class="text-lg content-bounce">
+
+1. Basher-info
+    1. basher-id → PR (int)
+    2. basher-role ( varchar )
+    3. basher-name ( varchar )
+    4. username or email ( varchar )
+    5. password (varchar) 
+    6. clan-id → FR(clan_details) (int)
+2. clan-details
+    1. clan name (varchar)
+    2. desc for nomination( varchar )
+    3. clan-id → PR (int)
+    4. members (varchar)
+3. points
+    1. points-id (int)
+    2. point (int)
+    3. basher-id → FR (int)
+    4. date (int)
+4. Nomination
+    1. nominee-id →PR (int)
+    2. basher-id → FR(int)
+    3. descriptions(varchar)
+    4. nominees name(varchar)
+    5. clan-id(int)
+    6. category( enum )
+5. Vote
+    1. nominee-id →PR (int)
+    2. basher-id  → FR (int)
+    3. clan-id → FR (int)
+    4. category ( enum )
+6. Winners-Hall of fame
+    1. clan-id → FR (int) 
+    2. basher-id (int) 
+    3. nominee-id → PR (int)
+        </pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-base">© 2025 Basher Recognition System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Trigger animations on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
