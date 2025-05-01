@@ -67,7 +67,9 @@
       box-shadow: 0 0 30px rgba(99, 102, 241, 0.8), 0 0 50px rgba(147, 51, 234, 0.5);
       transition: box-shadow 0.3s ease;
     }
-    .section-glow:hover .side-image {
+    .section-glow:hover .side-image,
+    .section-glow:hover .avatar-image,
+    .section-glow:hover .certificate-image {
       filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
       transition: filter 0.3s ease;
     }
@@ -99,16 +101,38 @@
       50% { transform: scale(1.2) rotate(180deg); }
       100% { transform: scale(1) rotate(360deg); opacity: 1; }
     }
-    /* Side Images */
+    /* Side Images, Avatar, and Certificates */
     .side-image {
       width: 100px;
       height: 100px;
       object-fit: contain;
     }
+    .avatar-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .certificate-image {
+      width: 550px;
+      height: 300px;
+      border-radius: 0.5rem;
+      object-fit: cover;
+    }
     @media (max-width: 768px) {
       .side-image {
         width: 80px;
         height: 80px;
+        margin-bottom: 1rem;
+      }
+      .avatar-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+      }
+      .certificate-image {
+        width: 250px;
+        height: 167px;
         margin-bottom: 1rem;
       }
       .flex-col > .glass {
@@ -121,13 +145,25 @@
   <!-- Header -->
   <header class="header-bg py-8 sticky top-0 z-10 shadow-lg">
     <div class="container mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-indigo-300 typewriter inline-block">Rookie's Progress by Anitus </h1>
-      <p class="mt-2 text-lg text-indigo-200 fade-in-scale" style="animation-delay: 2.2s;">A Journey Through Tech Community👊</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-indigo-300 typewriter inline-block">Basher Progress by Anitus A !!</h1>
+      <p class="mt-2 text-lg text-indigo-200 fade-in-scale" style="animation-delay: 2.2s;">A Journey Through Tech and Community</p>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="container mx-auto px-4 py-12 space-y-12">
+    <!-- About Me -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/user.png" alt="User Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">About Me</h2>
+        </div>
+        <p class="slide-in-left" style="--i: 1;">Hi, I'm Anitus A, a passionate tech enthusiast and rookie of the BYTE-BASH-BLITZ community. I enjoy exploring web development, Python, and collaborative projects, constantly learning and contributing to our technical hub.</p>
+      </div>
+      <img src="Anitus.jpg" alt="Anitus A" class="avatar-image image-scroll image-intro order-first md:order-none">
+    </section>
+
     <!-- Things I Learned -->
     <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
       <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
@@ -145,7 +181,7 @@
           <li class="slide-in-left" style="--i: 7;">uses of github student pack</li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/learning.png" alt="Learning" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/learning.png" alt="Learning" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Stuffs I Learned -->
@@ -171,7 +207,7 @@
           <li class="slide-in-left" style="--i: 5;"><a href="https://fonts.google.com" class="text-indigo-400 hover:underline">Font: google fonts</a></li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/code.png" alt="Code" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/code.png" alt="Code" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Experience I Got -->
@@ -197,7 +233,7 @@
           <li class="slide-in-left" style="--i: 13;">What is local host</li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/github.png" alt="GitHub" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/github.png" alt="GitHub" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- My Contributions -->
@@ -209,21 +245,49 @@
         </div>
         <p class="slide-in-left" style="--i: 1;">I co-operate for all the bashers, try to attend all the clan gathering meeting, all weekly bash and also our intra clan’s hackathon.</p>
       </div>
-      <img src="https://img.icons8.com/color/100/collaboration.png" alt="Collaboration" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/collaboration.png" alt="Collaboration" class="side-image image-scroll image-intro order-first md:order-none">
+    </section>
+
+    <!-- My Certificates -->
+    <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
+      <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
+        <div class="flex items-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/certificate.png" alt="Certificate Icon" class="w-8 h-8 mr-3">
+          <h2 class="text-2xl font-semibold text-indigo-400">My Certificates</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="slide-in-left" style="--i: 1;">
+            <img src="CertificateOfCompletion_Microsoft Security Essentials Professional Certificate by Microsoft and LinkedIn_page-0001.jpg" alt="Certificate 1" class="certificate-image image-scroll image-intro">
+            <p class="text-center text-indigo-300 mt-2">Certificate 1</p>
+          </div>
+          <div class="slide-in-left" style="--i: 2;">
+            <img src="CertificateOfCompletion_Microsoft Security Essentials Concepts Solutions and AIPowered Protection_page-0001.jpg" alt="Certificate 2" class="certificate-image image-scroll image-intro">
+            <p class="text-center text-indigo-300 mt-2">Certificate 2</p>
+          </div>
+          <div class="slide-in-left" style="--i: 3;">
+            <img src="CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn_page-0001.jpg" alt="Certificate 3" class="certificate-image image-scroll image-intro">
+            <p class="text-center text-indigo-300 mt-2">Certificate 3</p>
+          </div>
+          <div class="slide-in-left" style="--i: 4;">
+            <img src="https://via.placeholder.com/300x200?text=Certificate+4" alt="Certificate 4" class="certificate-image image-scroll image-intro">
+            <p class="text-center text-indigo-300 mt-2">Certificate 4</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Inspiration -->
     <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
       <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
         <div class="flex items-center mb-4">
-            <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/idea-window.png" alt="idea-window"/>
+          <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/228BE6/idea-window.png" alt="idea-window"/>
           <h2 class="text-2xl font-semibold text-indigo-400">Inspiration</h2>
         </div>
         <div class="border-l-4 border-indigo-500 pl-4 italic slide-in-left" style="--i: 1;">
           <p>My inspiration is the one who is always in technical mindset 😁 [ his collection ].</p>
         </div>
       </div>
-      <img width="100" height="100" src="https://img.icons8.com/clouds/100/innovation.png" alt="innovation"/>
+      <img width="100" height="100" src="https://img.icons8.com/clouds/100/innovation.png" alt="innovation"class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Clan Initiative -->
@@ -234,7 +298,7 @@
           <h2 class="text-2xl font-semibold text-indigo-400">Clan Initiative</h2>
         </div>
         <p class="mb-4 slide-in-left" style="--i: 1;">I think we are the technical hub of our community 😉 since we're the only clan with "technology" in our name.</p>
-        <p class="mb-4 slide-in-left" style="--i: 2;">Our IT organizer conducted an intra-clan hackathon where we gained valuable knowledge about:</p>
+        <p class="mb-4 slide-in-left" style="--i: 2;">Our IT organizer conducted an inter-clan hackathon where we gained valuable knowledge about:</p>
         <ul class="list-disc pl-6 space-y-2">
           <li class="slide-in-left" style="--i: 3;">Why idea 💡 sharing is the first step</li>
           <li class="slide-in-left" style="--i: 4;">How to create app flow</li>
@@ -244,7 +308,7 @@
           <li class="slide-in-left" style="--i: 8;">How to connect a login page with a database</li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/rocket.png" alt="Initiative" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/rocket.png" alt="Initiative" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Tasks I Completed -->
@@ -260,7 +324,7 @@
           <li class="slide-in-left" style="--i: 3;">I created a profile for my GitHub account using markdown language. { ITO Bennyhinn Sam }</li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/python.png" alt="Python" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/python.png" alt="Python" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Challenges I Faced -->
@@ -278,7 +342,7 @@
         </ol>
         <p class="text-gray-400 mt-4 text-sm slide-in-left" style="--i: 1;">The above details were gathered through daily meetings in Aura-7F clan</p>
       </div>
-      <img src="https://img.icons8.com/color/100/error.png" alt="Error" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/error.png" alt="Error" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Experience by Weekly Bash -->
@@ -295,7 +359,7 @@
           <li class="slide-in-left">At my 4th weekly bash, Basher Falin taught basic Adobe Photoshop skills, followed by fun gaming sessions for the rest of the day.</li>
         </ul>
       </div>
-      <img src="https://img.icons8.com/color/100/calendar.png" alt="Calendar" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/calendar.png" alt="Calendar" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Projects -->
@@ -307,30 +371,30 @@
         </div>
         <p class="mb-4 slide-in-left" style="--i: 1;">Explore some of the projects I've worked on:</p>
         <div class="flex flex-col md:flex-row gap-4">
-          <a href="ajr.html" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 2;">Project 1: Identation for an app </a>
-          <a href="https://anitusa.github.io/AnitusA-portfolio/" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 3;">Project 2: Personal Portfolio </a>
+          <a href="ajr.html" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 2;">Project 1: Identation </a>
+          <a href="https://anitusa.github.io/AnitusA-portfolio/" target="_blank" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors slide-in-left" style="--i: 3;">Project 2: Personal Portfolio</a>
         </div>
       </div>
-      <img src="https://img.icons8.com/color/100/project.png" alt="Project" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/project.png" alt="Project" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- Suggestion for Our Community -->
     <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
       <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
         <div class="flex items-center mb-4">
-          <img src="https://img.icons8.com/ios-filled/50/4f46e5/idea.png" alt="Idea Icon" class="w-10 h-10 mr-3">
+          <img src="https://img.icons8.com/ios-filled/50/4f46e5/idea.png" alt="Idea Icon" class="w-8 h-8 mr-3">
           <h2 class="text-2xl font-semibold text-indigo-400">Suggestion for Our Community</h2>
         </div>
-        <p class="slide-in-left" style="--i: 1;">As the technical community on our campus, we share knowledge through weekly bash sessions. However, these sessions only provide a basic overview without hands-on practical or theoretical learning. Therefore, I suggested hosting a competition every 3 months where bash clan build something new. This would help everyone understand how different domains work together in product development. I believe this would inspire all bashers in our community !!!</p>
+        <p class="slide-in-left" style="--i: 1;">As the technical community on our campus, we share knowledge through weekly bash sessions. However, these sessions only provide a basic overview without hands-on practical or theoretical learning. Therefore, I suggested hosting a competition every 3 months where bashers build something new. This would help everyone understand how different domains work together in product development. I believe this would inspire all bashers in our community !!!</p>
       </div>
-      <img src="https://img.icons8.com/color/100/idea.png" alt="Idea" class="side-image image-scroll image-intro">
+      <img src="https://img.icons8.com/color/100/idea.png" alt="Idea" class="side-image image-scroll image-intro order-first md:order-none">
     </section>
 
     <!-- My Gratefulness -->
     <section class="flex flex-col md:flex-row items-start gap-6 section-glow">
       <div class="glass rounded-xl shadow-lg p-6 section-animate flex-1">
         <div class="flex items-center mb-4">
-            <img width="40" height="40" src="https://img.icons8.com/glyph-neue/64/7950F2/heart-with-arrow--v1.png" alt="heart-with-arrow--v1"/>
+          <img width="40" height="40" src="https://img.icons8.com/glyph-neue/64/7950F2/heart-with-arrow--v1.png" alt="heart-with-arrow--v1"/>
           <h2 class="text-2xl font-semibold text-indigo-400">My Gratefulness</h2>
         </div>
         <p class="slide-in-left" style="--i: 1;">I want to thank all the rookies, bashers, organizers, and moderators who encouraged me and helped me enter the community as a rookie. I'm grateful to be part of BYTE-BASH-BLITZ 👊. The bashers, captain bashers, and organizers have been incredibly helpful during task completion.</p>
